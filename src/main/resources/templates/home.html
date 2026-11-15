@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta charset="UTF-8">
+
+<title>Student Form</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f4f4;
+}
+
+.container{
+
+width:400px;
+margin:auto;
+margin-top:50px;
+padding:20px;
+background:white;
+box-shadow:0px 0px 10px gray;
+
+}
+
+input{
+
+width:90%;
+padding:10px;
+margin-top:10px;
+margin-bottom:15px;
+
+}
+
+button{
+
+width:90%;
+padding:10px;
+background:green;
+color:white;
+border:none;
+font-size:18px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2 align="center">Student Registration</h2>
+
+<form th:action="@{/save}" th:object="${student}" method="post">
+
+<input type="text" th:field="*{name}" placeholder="Enter Name">
+
+<input type="email" th:field="*{email}" placeholder="Enter Email">
+
+<input type="text" th:field="*{course}" placeholder="Enter Course">
+
+<button type="submit">Save</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
